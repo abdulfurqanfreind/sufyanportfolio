@@ -1,0 +1,536 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333; 
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px; /* Default padding for smaller screens */
+    color: white;
+    position: sticky; /* Keeps the navbar fixed at the top */
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: cyan;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between links */
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: cyan;
+  }
+  
+  /* Mobile View */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 60px; /* Adjust to appear below the navbar */
+      right: 20px;
+      left: 5px;
+      width: calc(100% - 40px);
+      border-radius: 5px;
+      padding: 10px;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links li {
+      text-align: left;
+      padding: 10px 0;
+    }
+  }
+  
+  /* Laptop and Big Screen View */
+  @media (min-width: 1024px) {
+    .navbar {
+      padding-left: 200px;
+      padding-right: 200px; /* Add extra space on larger screens */
+    }
+  }
+  
+  
+/* Hero Section */
+.hero {
+    height: 63.5vh; /* Full screen height */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px; /* Default padding for spacing */
+    margin-top: 10rem;
+    margin-left: 11rem; /* Default margin for larger screens */
+}
+
+.hero-content {
+    max-width: 600px; /* Limit the width for better readability */
+}
+
+/* Headings and Text */
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: cyan; /* Cyan color for logo/text emphasis */
+}
+
+/* Hire Me Button */
+.hire-me-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: black;
+    background-color: cyan;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hire-me-btn:hover {
+    background-color: #00bcd4; /* Slightly darker cyan on hover */
+}
+
+/* Hero Image */
+.hero-image img {
+    width: 400px;
+    height: auto;
+    position: relative;
+    top: -70px;
+    border-radius: 35%;
+    object-fit: cover; /* Ensures the image maintains a good aspect ratio */
+    margin-left: 8rem; 
+    /* Add space between the text and image */
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+    .hero {
+        margin-top: 5rem;
+        margin-left: 5rem;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center align for better balance */
+        text-align: center; /* Center text */
+    }
+
+    .hero-image img {
+        width: 80%;
+        margin-top: 2rem; /* Add spacing between text and image */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 2rem;
+        margin-left: 0; /* No left margin on mobile */
+        padding: 10px;
+        flex-direction: column; /* Stack content vertically */
+        align-items: start;
+        text-align: start; /* Center text */
+    }
+
+    .hero-content {
+        max-width: 90%; /* Adjust content width */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .hire-me-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .hero-image img {
+        width: 70%; /* Further scale down the image */
+    }
+}
+
+/* Responsive Design for Very Small Screens */
+@media (max-width: 480px) {
+    .hero {
+        margin-top: 5rem;
+        margin-left: 12px;
+        padding: 5px; /* Minimal padding for very small screens */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .hire-me-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .hero-image img {
+        width: 80%; /* Smaller image for smaller screens */
+        position: relative;
+        top: 40px;
+        right: 90px;
+        
+    }
+}
+
+
+  /* About Page Styles */
+  /* About Page Styles */
+.about {
+    display: flex;
+    justify-content: left; /* Align content to the left */
+    align-items: start; /* Align content to the top */
+    height: 61vh; /* Full screen height */
+    background: white; /* White background */
+    color: black; /* Black text */
+    text-align: start; /* Left-align text */
+    padding: 20px;
+}
+
+.about-content {
+    max-width: 800px; /* Limit content width */
+    padding: 20px;
+    background-color: white; /* Content box background */
+    color: gray; /* Text color inside content box */
+    border-radius: 8px; /* Rounded corners */
+    margin-left: 10rem; /* Space from the left */
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: rgb(31, 95, 95); /* Dark teal heading */
+}
+
+.name {
+    color: black; /* Bold black color for the name */
+}
+
+.about p {
+    font-size: 1.2rem; /* Slightly larger text */
+    line-height: 1.6; /* Increase readability */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        margin-left: 0; /* Remove large margin for smaller screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .about h2 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .about p {
+        font-size: 1rem; /* Adjust text size */
+    }
+}
+
+/* Services Section Styles */
+.services {
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    color: #333;
+    padding: 50px 20px;
+    text-align: left;
+    padding-left: 13rem; /* Keep padding for larger screens */
+}
+
+.services-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: black; /* Highlighted heading */
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap services in multiple rows for responsiveness */
+    justify-content: start;
+    gap: 20px; /* Spacing between service cards */
+}
+
+.service-card {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    width: 300px; /* Fixed width for uniformity */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: cyan; /* Cyan text for service titles */
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: gray;
+    line-height: 1.6;
+}
+
+.service-card:hover {
+    transform: scale(1.05); /* Slightly grow on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        padding-left: 2rem; /* Reduce left padding on smaller screens */
+        text-align: center; /* Center-align text for mobile */
+    }
+
+    .services-heading {
+        font-size: 1.8rem; /* Slightly smaller heading for mobile */
+        text-align: center; /* Center-align heading for smaller screens */
+    }
+
+    .services-container {
+        justify-content: center; /* Center services on smaller screens */
+    }
+
+    .service-card {
+        width: 90%; /* Almost full-width cards for mobile devices */
+    }
+}
+
+
+
+/* Skills Section Styles */
+.skills {
+    /* background: linear-gradient(to right, #1f4037, #99f2c8); Attractive gradient */
+    background: linear-gradient(to right, #232526, #414345);
+    color: #fff; /* White text for contrast */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.skills-heading {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #f9f9f9; /* Soft white heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.skill-item {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #ffd700; /* Gold color for icons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-heading {
+        font-size: 2rem;
+    }
+
+    .skill-item {
+        font-size: 1rem;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .skill-icon {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    background: linear-gradient(to right, #232526, #414345); /* Dark gradient background */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f9f9f9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #bbb;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #1abc9c; /* Highlight on focus */
+    outline: none;
+}
+
+.contact-btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #16a085;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-heading {
+        font-size: 2rem;
+    }
+
+    .contact-text {
+        font-size: 1rem;
+    }
+}
+
+
+/* Simple Footer Styles */
+.simple-footer {
+    background-color: #f8f9fa; /* Light gray background */
+    color: black; /* Subtle dark gray text */
+    text-align: center;
+    
+    padding: 10px 0;
+    padding-bottom: 15px;
+    height: 15px;
+    font-size: 0.5rem;
+    /* border-top: 1px solid #dee2e6; Thin border for separation */
+}
+
+.simple-footer p {
+    /* margin: 0; */
+}
